@@ -1,38 +1,137 @@
 .App {
-  text-align: center;
+  background-image: linear-gradient(to bottom, #250b1a, #35102c, #421742, #4a205c, #4b2d7a, #4a328c, #45379f, #3a3eb3, #423abd, #4c35c6, #572dce, #6421d5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: #333;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.NavBar-left {
+  margin-left: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.NavBar-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.NavBar-right button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.App-content {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+      padding-top: 30px;
+    /* Adjust the gap size as needed */
+  
+}
+
+.Item-content{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 30px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Item-content .Text-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Text-area p{
+  margin: 5px 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Item-content img{
+  display: flex;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.button {
+  background-color: #300B20;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+  border-radius: 5px;
+}
+
+.footer {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.footer .Text-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer .button-Link {
+  background-color: #300B20;
+    border: none;
+    color: white;
+    padding: 8px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 1000px) {
+
+    .App-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      padding-top: 30px;
+        /* Adjust the gap size as needed */
+    
+      }
+}
+@media (max-width: 768px) {
+  .NavBar-right {
+    display:none;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .NavBar-right::-webkit-scrollbar {
+    display: none;
   }
+
+    .App-content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 30px;
+    }
 }
